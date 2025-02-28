@@ -9,4 +9,5 @@ return [
     'exposed_headers' => ['Authorization', 'X-Custom-Header'], // Exponha headers úteis
     'max_age' => 0,
     'supports_credentials' => false,  // ⚠️ Altere para "true" apenas se estiver usando cookies ou sessões
+
 ];
