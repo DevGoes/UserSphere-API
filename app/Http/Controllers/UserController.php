@@ -32,7 +32,6 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'sometimes|string|max:255',
             'email' => 'sometimes|string|email|max:255|unique:users,email,' . $id,
-            'phone' => 'sometimes|string|max:20',
             'password' => 'sometimes|string|min:6',
         ]);
 
@@ -42,7 +41,6 @@ class UserController extends Controller
 
         if ($request->has('name')) $user->name = $request->name;
         if ($request->has('email')) $user->email = $request->email;
-        if ($request->has('phone')) $user->phone = $request->phone;
         if ($request->has('password')) $user->password = Hash::make($request->password);
         $user->save();
 
@@ -71,7 +69,7 @@ class UserController extends Controller
 
         $users = User::where('name', 'LIKE', "%{$query}%")
             ->orWhere('email', 'LIKE', "%{$query}%")
-            ->get(); // Mudamos para get() para retornar uma lista
+            ->get();
 
         if ($users->isEmpty()) {
             return response()->json(['error' => 'Nenhum usuário encontrado'], 404);

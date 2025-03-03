@@ -11,7 +11,7 @@ class User extends Authenticatable implements JWTSubject
     use CodeUUID;
 
     protected $fillable = [
-        'id', 'name', 'email', 'phone', 'password'
+        'id', 'name', 'email', 'password'
     ];
 
     // Rest omitted for brevity
