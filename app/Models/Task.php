@@ -11,9 +11,6 @@ class Task extends Model
     use CodeUUID;
 
     protected $table = 'tasks';
-    protected $primaryKey = 'id';
-    public $incrementing = false;
-    protected $keyType = 'string';
 
     protected $fillable = [
         'id', 'project_id', 'name', 'description', 'status'

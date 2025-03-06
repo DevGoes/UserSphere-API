@@ -12,9 +12,6 @@ class Project extends Model
     use CodeUUID;
 
     protected $table = 'projects';
-    protected $primaryKey = 'id';
-    public $incrementing = false;
-    protected $keyType = 'string';
 
     protected $fillable = [
         'id', 'user_id', 'name', 'description',
